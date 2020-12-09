@@ -261,7 +261,10 @@ function drawScene(gl, programInfo, buffers, deltaTime) {
   let trX = document.getElementById('trX').value;
   let trY = document.getElementById('trY').value;
   let trZ = document.getElementById('trZ').value;
-
+  
+  let rtX = document.getElementById('rtX').value;
+  let rtY = document.getElementById('rtY').value;
+  let rtZ = document.getElementById('rtZ').value;
 
   mat4.translate(modelViewMatrix,     // destination matrix
     modelViewMatrix,     // matrix to translate
@@ -270,15 +273,18 @@ function drawScene(gl, programInfo, buffers, deltaTime) {
     
   mat4.rotate(modelViewMatrix,  // destination matrix
     modelViewMatrix,  // matrix to rotate
-    cubeRotation,     // amount to rotate in radians
-    [0, 1, 0]);       // axis to rotate around (Z)
+    rtZ,     // amount to rotate in radians
+    [0, 1 , 0]);       // axis to rotate around (Z)
 
   mat4.rotate(modelViewMatrix,  // destination matrix
     modelViewMatrix,  // matrix to rotate
-    cubeRotation * .7,// amount to rotate in radians
-    [0, 1, 0]);       // axis to rotate around (X)
+    rtX * 0.7,// amount to rotate in radians
+    [0, 0, 1]);       // axis to rotate around (X)
 
-
+    mat4.rotate(modelViewMatrix,  // destination matrix
+      modelViewMatrix,  // matrix to rotate
+      rtY * 0.7,// amount to rotate in radians
+      [1, 0, 0]);       // axis to rotate around (Y)
   
   // Tell WebGL how to pull out the positions from the position
   // buffer into the vertexPosition attribute
@@ -358,6 +364,7 @@ function drawScene(gl, programInfo, buffers, deltaTime) {
   // Update the rotation for the next draw
 
   cubeRotation += deltaTime;
+  
 }
 
 //
@@ -412,3 +419,6 @@ function loadShader(gl, type, source) {
 
 
 
+function rotationReleaseMouseHandler(index){
+  //document.getElementById(index).value = 0.0; 
+}
