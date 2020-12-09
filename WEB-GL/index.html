@@ -1,31 +1,31 @@
 <HTML>
 
-    <HEAD>
-    
-        <title>WebGL Demo</title>
-        <link rel="stylesheet" href="./webgl.css" type="text/css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/2.8.1/gl-matrix-min.js"
-                integrity="sha512-zhHQR0/H5SEBL3Wn6yYSaTTZej12z0hVZKOv3TwCUXT1z5qeqGcXJLLrbERYRScEDDpYIJhPC1fk31gqR783iQ=="
-                crossorigin="anonymous" defer>
+<HEAD>
+
+    <title>WebGL Demo</title>
+    <link rel="stylesheet" href="./webgl.css" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/2.8.1/gl-matrix-min.js"
+        integrity="sha512-zhHQR0/H5SEBL3Wn6yYSaTTZej12z0hVZKOv3TwCUXT1z5qeqGcXJLLrbERYRScEDDpYIJhPC1fk31gqR783iQ=="
+        crossorigin="anonymous" defer>
         </script>
-        <script src="code.js" defer></script>
-    
+    <script src="code.js" defer></script>
+
     <link rel="stylesheet" href="./style.css" type="text/css">
-    </HEAD>
-    
-    <BODY BGCOLOR="FFFFFF">
-    
+</HEAD>
+
+<BODY BGCOLOR="FFFFFF">
+
     <div class="square">
         <div class="block">
             <canvas id="glcanvas" width="640" height="480"></canvas>
         </div>
     </div>
-    
+
     <div class="square">
         <div class="rightPanel">
-            
+
             <div class="centered">
-            </br>
+                </br>
                 <label for="fname">Translação:</label><br>
 
                 <label for="fname">x<span id="myText"></span></label>
@@ -36,18 +36,21 @@
 
                 <label for="fname">z</label>
                 <input type="range" id="trZ" name="trZ" min="-30" max="30" step="0.05" value="-10"><br>
-            </br>
+                </br>
                 <label for="lname">Rotação</label><br>
 
                 <label for="fname">x</label>
-                <input type="range" id="rtX" name="rotX" min="0" max="9" step="0.10" onmouseup="rotationReleaseMouseHandler('rtX')"><br>
+                <input type="range" id="rtX" name="rotX" min="0" max="9" step="0.10"
+                    onmouseup="rotationReleaseMouseHandler('rtX')"><br>
 
                 <label for="fname">y</label>
-                <input type="range" id="rtY" name="rotY" min="0" max="9" step="0.10" value="0" onmouseup="rotationReleaseMouseHandler('rtY')"><br>
+                <input type="range" id="rtY" name="rotY" min="0" max="9" step="0.10" value="0"
+                    onmouseup="rotationReleaseMouseHandler('rtY')"><br>
 
                 <label for="fname">z</label>
-                <input type="range" id="rtZ" name="rotZ" min="0" max="6.3" step="0.10" onmouseup="rotationReleaseMouseHandler('rtZ')"><br>
-            </br>
+                <input type="range" id="rtZ" name="rotZ" min="0" max="6.3" step="0.10"
+                    onmouseup="rotationReleaseMouseHandler('rtZ')"><br>
+                </br>
                 <label for="lname">Escalonamento</label><br>
                 <label for="fname">x</label>
                 <input type="text" id="EscalonamentoX" name="fname"><br>
@@ -55,29 +58,28 @@
                 <input type="text" id="EscalonamentoY" name="fname"><br>
                 <label for="fname">z</label>
                 <input type="text" id="EscalonamentoZ" name="fname"><br>
-            </br>
-            <button type="button" onclick="showValues()">Processar
+                </br>
+                
             </div>
             <label for="lname">Opções</label><br>
+
             <div class="rightPanelBorder">
                 <div>
-                    <input type="checkbox" id="chkTranslucent" name="Translucent"
-                        onclick="myBooleanFunction()">
+                    <input type="checkbox" id="chkTranslucent" name="Translucent">
                     <label for="Tranlucent">Translucent</label>
                 </div>
-                
-                
+
+
                 <div>
-                    <input type="checkbox" id="Grade" name="Grade"
-                        onclick="myBooleanFunction()">
-                    <label for="Grade">Grade</label>
+                    <!-- <input type="checkbox" id="Grade" name="Grade">
+                    <label for="Grade">Grade</label> -->
                 </div>
             </div>
         </div>
-            
-        </div>
+
     </div>
-    
-    </BODY>
-    
-    </HTML>
+    </div>
+
+</BODY>
+
+</HTML>
