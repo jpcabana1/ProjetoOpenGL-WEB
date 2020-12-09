@@ -1,15 +1,83 @@
-<!DOCTYPE html>
-<html>
+<HTML>
 
-<head>
-    <meta charset="utf-8">
-    <title>WEBGL</title>
-    <link href="style.css" />
-</head>
+    <HEAD>
+    
+        <title>WebGL Demo</title>
+        <link rel="stylesheet" href="./webgl.css" type="text/css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/2.8.1/gl-matrix-min.js"
+                integrity="sha512-zhHQR0/H5SEBL3Wn6yYSaTTZej12z0hVZKOv3TwCUXT1z5qeqGcXJLLrbERYRScEDDpYIJhPC1fk31gqR783iQ=="
+                crossorigin="anonymous" defer>
+        </script>
+        <script src="code.js" defer></script>
+    
+    <link rel="stylesheet" href="./style.css" type="text/css">
+    </HEAD>
+    
+    <BODY BGCOLOR="FFFFFF">
+    
+    <div class="square">
+        <div class="block">
+            <canvas id="glcanvas" width="640" height="480"></canvas>
+        </div>
+    </div>
+    
+    <div class="square">
+        <div class="rightPanel">
+            
+            <div class="centered">
+            </br>
+                <label for="fname">Translação:</label><br>
 
-<body>
-    <canvas id="glCanvas" width="640" height="480"></canvas>
-    <script src="code.js"></script>
-</body>
+                <label for="fname">x<span id="myText"></span></label>
+                <input type="range" id="trX" name="transX" min="-30" max="30" step="0.05"><br>
 
-</html>
+                <label for="fname">y</label>
+                <input type="range" id="trY" name="trY" min="-30" max="30" step="0.05"><br>
+
+                <label for="fname">z</label>
+                <input type="range" id="trZ" name="trZ" min="-30" max="30" step="0.05" value="-10"><br>
+            </br>
+                <label for="lname">Rotação</label><br>
+
+                <label for="fname">x</label>
+                <input type="range" id="rtX" name="rotX" min="-1" max="1" step="0.10"><br>
+
+                <label for="fname">y</label>
+                <input type="range" id="rtY" name="rotY" min="-1" max="1" step="0.10"><br>
+
+                <label for="fname">z</label>
+                <input type="range" id="rtZ" name="rotZ" min="-1" max="1" step="0.10"><br>
+            </br>
+                <label for="lname">Escalonamento</label><br>
+                <label for="fname">x</label>
+                <input type="text" id="EscalonamentoX" name="fname"><br>
+                <label for="fname">y</label>
+                <input type="text" id="EscalonamentoY" name="fname"><br>
+                <label for="fname">z</label>
+                <input type="text" id="EscalonamentoZ" name="fname"><br>
+            </br>
+            <button type="button" onclick="showValues()">Processar
+            </div>
+            <label for="lname">Opções</label><br>
+            <div class="rightPanelBorder">
+                <div>
+                    <input type="checkbox" id="chkTranslucent" name="Translucent"
+                        onclick="myBooleanFunction()">
+                    <label for="Tranlucent">Translucent</label>
+                </div>
+                
+                
+                <div>
+                    <input type="checkbox" id="Grade" name="Grade"
+                        onclick="myBooleanFunction()">
+                    <label for="Grade">Grade</label>
+                </div>
+            </div>
+        </div>
+            
+        </div>
+    </div>
+    
+    </BODY>
+    
+    </HTML>
